@@ -86,6 +86,7 @@ func ReadCommonCircuitData(path string) CommonCircuitData {
 	commonCircuitData.Config.FriConfig.RateBits = raw.Config.FriConfig.RateBits
 	commonCircuitData.Config.FriConfig.CapHeight = raw.Config.FriConfig.CapHeight
 	commonCircuitData.Config.FriConfig.ProofOfWorkBits = raw.Config.FriConfig.ProofOfWorkBits
+	commonCircuitData.Config.FriConfig.ReductionStrategy = raw.Config.FriConfig.ReductionStrategy.ConstantArityBits // only ConstantArityBits is supported
 	commonCircuitData.Config.FriConfig.NumQueryRounds = raw.Config.FriConfig.NumQueryRounds
 
 	commonCircuitData.FriParams.DegreeBits = raw.FriParams.DegreeBits
@@ -93,6 +94,7 @@ func ReadCommonCircuitData(path string) CommonCircuitData {
 	commonCircuitData.FriParams.Config.RateBits = raw.FriParams.Config.RateBits
 	commonCircuitData.FriParams.Config.CapHeight = raw.FriParams.Config.CapHeight
 	commonCircuitData.FriParams.Config.ProofOfWorkBits = raw.FriParams.Config.ProofOfWorkBits
+	commonCircuitData.FriParams.Config.ReductionStrategy = raw.FriParams.Config.ReductionStrategy.ConstantArityBits // only ConstantArityBits is supported
 	commonCircuitData.FriParams.Config.NumQueryRounds = raw.FriParams.Config.NumQueryRounds
 	commonCircuitData.FriParams.ReductionArityBits = raw.FriParams.ReductionArityBits
 
