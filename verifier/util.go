@@ -9,11 +9,9 @@ import (
 
 type ExampleVerifierCircuit struct {
 	PublicInputs            []gl.Variable                     `gnark:",public"`
-	Proof                   variables.Proof                   `gnark:"-"`
-	VerifierOnlyCircuitData variables.VerifierOnlyCircuitData `gnark:"-"`
-
-	// This is configuration for the circuit, it is a constant not a variable
-	CommonCircuitData types.CommonCircuitData
+	Proof                   variables.Proof                   `gnark:",secret"`
+	VerifierOnlyCircuitData variables.VerifierOnlyCircuitData `gnark:",secret"`
+	CommonCircuitData       types.CommonCircuitData           `gnark:",-"`
 }
 
 func (c *ExampleVerifierCircuit) Define(api frontend.API) error {
